@@ -1,20 +1,19 @@
 
 
-const Input = ({ titulo, required, type, errorText, placeholder }) => {
-
+const Input = ({ titulo, required, type, errorText, placeholder, register, name }) => {
   const isRequired = required ? true : false;
 
   return (
     <>
-      <label for="validationCustom01" class="form-label">{titulo}</label>
+      <label className="form-label">{titulo}</label>
       <input
+        {...register(`${name}`)}
         type={type}
-        class="form-control"
-        id="validationCustom01"
+        className="form-control"
         placeholder={placeholder}
         required={isRequired}
       />
-      <div class="invalid-feedback">
+      <div className="invalid-feedback">
         {errorText}
       </div>
     </>

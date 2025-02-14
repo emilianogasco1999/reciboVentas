@@ -1,9 +1,9 @@
 
 
-const Container = ({ size, children, className }) => {
+const Container = ({ size, children, className = '' }) => {
   const existingSize = size ? `container-${size}` : 'container'
   return (
-    <div className={`${existingSize} ${className}`} >
+    <div className={`${existingSize} ${className}`.trim()} >
       {children}
     </div>
 
