@@ -39,7 +39,7 @@ const Home = () => {
         ))}
         
         <Select
-          titulo={'Metodo de pago '}
+          titulo={'Metodo de pago'}
           errorText={'elige metodo'}
           required={true}
           options={selectPagos}
