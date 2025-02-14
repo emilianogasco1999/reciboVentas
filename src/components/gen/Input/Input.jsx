@@ -1,5 +1,3 @@
-
-
 const Input = ({ titulo, required, type, errorText, placeholder, register, name }) => {
   const isRequired = required ? true : false;
 
