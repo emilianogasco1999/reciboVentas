@@ -1,0 +1,2 @@
+# Recibo de Ventas
+
