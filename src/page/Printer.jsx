@@ -22,7 +22,7 @@ const Printer = () => {
   const pagoSeleccionado = selectPagos.find(pag => pag.value == pago)
   return (
     <Ticket
-      img={empresaSeleccionada.img}
+      img={empresaSeleccionada.value}
       empresa={empresaSeleccionada.titulo}
       monto={monto}
       dni={nDni}
