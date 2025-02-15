@@ -1,8 +1,11 @@
 import Style from './Ticket.module.css'
 import wiic from '../../../assets/img/logos/wiic.svg'
 import chrisdei from '../../../assets/img/logos/chrisdei.png'
+import { useEffect } from 'react';
 const Ticket = ({ img, empresa, monto, dni, pedido, ticket, pago, fecha }) => {
-  console.log(img)
+   useEffect(() => {
+      document.title = `RV-001-000000${ticket}`;
+    }, []);
   const newMonto = new Intl.NumberFormat('es-AR', {
     style: 'currency',
     currency: 'ARS',
@@ -50,9 +53,6 @@ const Ticket = ({ img, empresa, monto, dni, pedido, ticket, pago, fecha }) => {
             <h6 className='text-center fw-bold'>* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * </h6>
 
           </div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nulla iure? Id deserunt aut reprehenderit corporis nobis, enim quae odit eaque ratione nihil totam aspernatur asperiores velit maxime, at architecto?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nulla iure? Id deserunt aut reprehenderit corporis nobis, enim quae odit eaque ratione nihil totam aspernatur asperiores velit maxime, at architecto?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nulla iure? Id deserunt aut reprehenderit corporis nobis, enim quae odit eaque ratione nihil totam aspernatur asperiores velit maxime, at architecto?
         </div>
       </div>
     </>

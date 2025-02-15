@@ -15,10 +15,17 @@
 }
 
 .recibo {
-  max-width:500px;
+  max-width: 500px;
   /* min-width:150px; */
   background: #fff;
   box-shadow: 5px 5px 19px #ccc;
   padding: 20px;
 }
 
+@media print {
+
+  /* Configuración de tamaño de página */
+  @page {
+    size: A4;
+  }
+}

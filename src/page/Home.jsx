@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import Footer from "../components/spec/footer/Footer"
@@ -9,6 +9,9 @@ import useBootstrapValidation from '../hooks/useBootstrapValidation.js'
 import Select from "../components/gen/select/Select.jsx";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'Home';
+  }, []);
   useBootstrapValidation();
   const { register, handleSubmit } = useForm()
   const navigate = useNavigate();
