@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./page/Home";
-import Footer from "./components/spec/footer/Footer"
 import Error404 from "./page/Error404";
+import Printer from "./page/Printer";
 function App() {
 
 
@@ -10,9 +10,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/printer" element={<Printer/>} />
         <Route path="*" element={<Error404 />} />
       </Routes>
-      <Footer />
+     
     </Router>
   )
 }

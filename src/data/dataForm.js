@@ -51,14 +51,16 @@ export const selectPagos = [
 ]
 export const selectEmpresa = [
   {
-    titulo: 'Wiic Egresados',
+    titulo: 'WIIC EGRESADOS',
     value: 1,
-    name: 'Wiic'
+    name: 'Wiic',
+    img: '/src/assets/img/logos/wiic.svg'
   },
   {
-    titulo: 'Chrisdei Egresados',
+    titulo: 'CHRISDEI EGRESADOS',
     value: 2,
-    name: 'Chrisdei'
+    name: 'Chrisdei',
+    img: '/src/assets/img/logos/chrisdei.png'
   },
 ]
 
