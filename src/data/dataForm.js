@@ -54,13 +54,13 @@ export const selectEmpresa = [
     titulo: 'WIIC EGRESADOS',
     value: 1,
     name: 'Wiic',
-    img: '/src/assets/img/logos/wiic.svg'
+    img: '../../../assets/img/logos/wiic.svg'
   },
   {
     titulo: 'CHRISDEI EGRESADOS',
     value: 2,
     name: 'Chrisdei',
-    img: '/src/assets/img/logos/chrisdei.png'
+    img: '../../../assets/img/logos/chrisdei.png'
   },
 ]
 
