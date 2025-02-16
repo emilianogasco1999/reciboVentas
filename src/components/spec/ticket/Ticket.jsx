@@ -3,7 +3,7 @@ import wiic from '../../../assets/img/logos/wiic.svg'
 import chrisdei from '../../../assets/img/logos/chrisdei.png'
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-const Ticket = ({ img, empresa, monto, dni, pedido, ticket, pago, fecha }) => {
+const Ticket = ({ img, empresa, monto, dni, pedido, ticket, pago, fecha, darkMode }) => {
 
   useEffect(() => {
     document.title = `RV-001-000000${ticket}`;
@@ -24,8 +24,8 @@ const Ticket = ({ img, empresa, monto, dni, pedido, ticket, pago, fecha }) => {
   return (
 
     <>
-      <div className={Style.container}>
-        <div className={Style.recibo}>
+      <div className={`${Style.container} ${darkMode ? Style.darkMode : ''}`}>
+        <div className={`${Style.recibo} ${darkMode ? Style.darkMode : ''}`}>
           <div className="row p-0 ">
 
             <div className="col-12 p-0 d-flex justify-content-center mb-2">

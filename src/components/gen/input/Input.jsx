@@ -1,4 +1,4 @@
-const Input = ({ titulo, required, type, errorText, placeholder, register, name }) => {
+const Input = ({ titulo, required, type, errorText, placeholder, register, name, darkMode }) => {
   const isRequired = required ? true : false;
 
   return (
@@ -7,7 +7,7 @@ const Input = ({ titulo, required, type, errorText, placeholder, register, name 
       <input
         {...register(`${name}`)}
         type={type}
-        className="form-control"
+        className={`form-control ${darkMode ? 'bg-dark text-white' : ''}`}
         placeholder={placeholder}
         required={isRequired}
       />

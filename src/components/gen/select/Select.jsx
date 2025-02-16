@@ -1,13 +1,13 @@
 
 
-const Select = ({ titulo, required, errorText, options, register, name }) => {
+const Select = ({ titulo, required, errorText, options, register, name, darkMode }) => {
   const isRequired = required ? true : false;
   return (
     <>
       <label className="form-label">{titulo}</label>
       <select
         {...register(`${name}`)}
-        className="form-select"
+        className={`form-select ${darkMode ? 'bg-dark text-white' : ''}`}
         required={isRequired}
       >
         {options && options.length > 0 ? (

@@ -9,6 +9,9 @@ const Printer = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const data = location.state;
+  // Obtener el estado darkMode del localStorage
+  const darkMode = JSON.parse(localStorage.getItem("darkMode")) || false;
+  
   useEffect(() => {
     if (!data) {
       navigate("/home");
@@ -31,6 +34,7 @@ const Printer = () => {
       ticket={nTicket}
       pago={pagoSeleccionado.titulo}
       fecha={fecha}
+      darkMode={darkMode}
     />
   )
 }
