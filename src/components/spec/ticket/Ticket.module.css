@@ -8,7 +8,6 @@
 .container {
   padding: 20px 10px;
   display: flex;
-  height: 99.9vh;
   justify-content: center;
   align-items: start;
 }
@@ -22,32 +21,13 @@
 }
 
 
-/* Modo oscuro */
-.container.darkMode {
-  background-color: #1f1f1f;
-  color: #ffffff;
-}
-
-.recibo.darkMode {
-  background-color: #2d2d2d;
-  color: #ffffff;
-  box-shadow: 5px 5px 19px #000;
-}
-
-.recibo.darkMode h1,
-.recibo.darkMode h6,
-.recibo.darkMode p {
-  color: #ffffff;
-}
-
 @media print {
   .noPrint {
     display: none;
   }
-
   /* Configuración de tamaño de página */
   @page {
     size: A4;
   }
-
+ 
 }

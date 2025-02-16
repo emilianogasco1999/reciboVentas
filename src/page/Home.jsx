@@ -10,20 +10,13 @@ import Select from "../components/gen/select/Select.jsx";
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(() => {
-    // Verificar si hay una preferencia guardada en el localStorage
     const savedPreference = localStorage.getItem("darkMode");
-    if (savedPreference !== null) {
-      return JSON.parse(savedPreference);
-    }
-    // Si no hay preferencia guardada, detectar el tema del sistema
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return savedPreference ? JSON.parse(savedPreference) : false;
   });
 
   useEffect(() => {
     document.title = 'Home';
-    // Guardar la preferencia en el localStorage
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
-    // Aplicar el tema al body
     if (darkMode) {
       document.body.classList.add('bg-dark', 'text-white');
     } else {
@@ -31,32 +24,24 @@ const Home = () => {
     }
   }, [darkMode]);
 
-  useEffect(() => {
-    document.title = 'Home';
-    if (darkMode) {
-      document.body.classList.add('bg-dark', 'text-white');
-    } else {
-      document.body.classList.remove('bg-dark', 'text-white');
-    }
-  }, [darkMode]);
-  useEffect(() => {
-    document.title = 'Home';
-  }, []);
   useBootstrapValidation();
+
   const { register, handleSubmit } = useForm()
   const navigate = useNavigate();
 
   const handlePrint = (data) => {
     const fecha = new Date().toLocaleString("es-ES");
     const updatedData = { ...data, fecha };
+    document.body.classList.remove('bg-dark', 'text-white');
     navigate("/printer", { state: updatedData });
   };
 
   const onSubmit = (data) => handlePrint(data);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prevMode) => !prevMode);
   };
+
   return (
     <Container className={`mt-3 ${darkMode ? 'bg-dark text-white' : ''}`} >
       <div className="d-flex justify-content-end mb-3">
@@ -106,7 +91,9 @@ const Home = () => {
         </div>
       </form>
 
-      <Footer />
+      <Footer
+        darkMode={darkMode}
+      />
     </Container>
   )
 }
