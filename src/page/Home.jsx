@@ -60,7 +60,7 @@ const Home = () => {
           name={'pago'}
         />
         <div className="col-12 d-flex justify-content-end">
-          <button className="btn btn-secondary" type="submit" >Imprimir <i className="bi bi-printer"></i> </button>
+          <button className="btn btn-secondary" type="submit" >Comprobante  <i className="bi bi-ticket-perforated"></i> </button>
         </div>
       </form>
 

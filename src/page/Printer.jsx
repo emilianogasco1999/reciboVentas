@@ -20,9 +20,7 @@ const Printer = () => {
 
   const empresaSeleccionada = selectEmpresa.find(emp => emp.value == empresa)
   const pagoSeleccionado = selectPagos.find(pag => pag.value == pago)
-  useEffect(() => {
-    window.print();
-  }, []);
+ 
   return (
     <Ticket
       img={empresaSeleccionada.value}

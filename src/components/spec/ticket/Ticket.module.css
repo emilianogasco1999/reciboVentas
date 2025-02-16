@@ -6,9 +6,7 @@
 } */
 
 .container {
-  background: #f1f1f1;
   padding: 20px 10px;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -23,9 +21,12 @@
 }
 
 @media print {
-
+  .noPrint {
+    display: none;
+  }
   /* Configuración de tamaño de página */
   @page {
     size: A4;
   }
+ 
 }

@@ -1,16 +1,26 @@
 import Style from './Ticket.module.css'
 import wiic from '../../../assets/img/logos/wiic.svg'
 import chrisdei from '../../../assets/img/logos/chrisdei.png'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 const Ticket = ({ img, empresa, monto, dni, pedido, ticket, pago, fecha }) => {
-   useEffect(() => {
-      document.title = `RV-001-000000${ticket}`;
-    }, []);
+
+  useEffect(() => {
+    document.title = `RV-001-000000${ticket}`;
+  }, []);
+
   const newMonto = new Intl.NumberFormat('es-AR', {
     style: 'currency',
     currency: 'ARS',
   }).format(monto)
+
   const newDni = new Intl.NumberFormat('es-AR').format(dni)
+
+  const handlePrint = () => {
+    window.print();
+  };
+
+
   return (
 
     <>
@@ -53,7 +63,12 @@ const Ticket = ({ img, empresa, monto, dni, pedido, ticket, pago, fecha }) => {
             <h6 className='text-center fw-bold'>* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * </h6>
 
           </div>
+          <div className="col-12 d-flex  justify-content-between" >
+            <Link to={'/home'} className={`btn btn-primary ${Style.noPrint}`} type="buton"><i className="bi bi-arrow-90deg-left"></i> ir al Home </Link>
+            <button className={`btn btn-secondary ${Style.noPrint}`} type="buton" onClick={handlePrint} >Imprimir  <i className="bi bi-printer"></i> </button>
+          </div>
         </div>
+
       </div>
     </>
   )
