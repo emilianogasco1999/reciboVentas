@@ -31,6 +31,22 @@ export const fromReciboVentas = [
     placeholder: 'Escribe el monto',
     name: 'monto'
   },
+  {
+    titulo: 'Obserbacion',
+    required: false,
+    type: 'text',
+    errorText: 'introduce alguna obsevación',
+    placeholder: 'Escribe una obsevarción',
+    name: 'observacion'
+  },
+  {
+    titulo: 'Numero de Cuota',
+    required: true,
+    type: 'number',
+    errorText: 'introduce la cuota',
+    placeholder: 'Escribe la cuota',
+    name: 'cuota'
+  },
 ]
 
 
@@ -47,20 +63,31 @@ export const selectPagos = [
     titulo: 'Tarjeta',
     value: 3,
   },
+]
 
+export const empresas = [
+  {
+    id: 1,
+    titulo: 'WIIC EGRESADOS',
+    name: 'Wiic',
+    sucursales: [
+      {
+        value: 1,
+        titulo:'Galeria San Martin 667',
+        direccion: 'Galeria San Martin 667, Sector Central - Oficina N°14',
+        ciudad: 'San Miguel de Tucumán',
+        provincia: 'Tucumán - 4000',
+        cel: '+54 9 3813 50-6527',
+        mail: 'adminwiicegresados@gmail.com'
+      },
+    ]
+  },
 ]
 export const selectEmpresa = [
   {
     titulo: 'WIIC EGRESADOS',
     value: 1,
     name: 'Wiic',
-    img: '../../../assets/img/logos/wiic.svg'
-  },
-  {
-    titulo: 'CHRISDEI EGRESADOS',
-    value: 2,
-    name: 'Chrisdei',
-    img: '../../../assets/img/logos/chrisdei.png'
-  },
+  }
 ]
 

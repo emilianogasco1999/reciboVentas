@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { selectEmpresa, selectPagos } from '../data/dataForm.js';
+import { selectPagos } from '../data/dataForm.js';
 import Ticket from "../components/spec/ticket/Ticket.jsx";
 
 
@@ -16,21 +16,21 @@ const Printer = () => {
   }, [data, navigate]);
 
   if (!data) return null;
-  const { empresa, monto, nDni, nPedido, nTicket, pago, fecha } = data;
+  const { monto, nDni, nPedido, nTicket, pago, fecha, sucursal, observacion, cuota } = data;
 
-  const empresaSeleccionada = selectEmpresa.find(emp => emp.value == empresa)
   const pagoSeleccionado = selectPagos.find(pag => pag.value == pago)
- 
+
   return (
     <Ticket
-      img={empresaSeleccionada.value}
-      empresa={empresaSeleccionada.titulo}
       monto={monto}
       dni={nDni}
       pedido={nPedido}
       ticket={nTicket}
       pago={pagoSeleccionado.titulo}
       fecha={fecha}
+      observacion={observacion}
+      sucursal={sucursal}
+      cuota={cuota}
     />
   )
 }

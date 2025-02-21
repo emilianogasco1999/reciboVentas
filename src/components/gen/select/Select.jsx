@@ -1,6 +1,7 @@
 
 
 const Select = ({ titulo, required, errorText, options, register, name, darkMode }) => {
+  
   const isRequired = required ? true : false;
   return (
     <>
