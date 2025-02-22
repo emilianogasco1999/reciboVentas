@@ -41,7 +41,7 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
 
 
             <h1 className='text-center'>X</h1>
-            <h6 className='text-center'>WIIC EGRESADOS</h6>
+            <h6 className='text-center'>{empresas[0].titulo}</h6>
 
             <div className={`${Style.datosEmpresa} mb-3`}>
               <p> <span className='fw-bold'>Razon Social: </span>Jif Indumentaria Sas </p>
