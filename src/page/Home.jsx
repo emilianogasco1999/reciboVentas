@@ -17,7 +17,7 @@ const Home = () => {
   });
 
   useEffect(() => {
-    document.title = 'Home';
+    document.title = 'Wiic Recibos - Home';
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
     if (darkMode) {
       document.body.classList.add('bg-dark', 'text-white');
