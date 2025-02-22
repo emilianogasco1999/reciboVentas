@@ -77,8 +77,8 @@ export const empresas = [
         direccion: 'Galeria San Martin 667, Sector Central - Oficina N°14',
         ciudad: 'San Miguel de Tucumán',
         provincia: 'Tucumán - 4000',
-        cel: '+54 9 3813 50-6527',
-        mail: 'adminwiicegresados@gmail.com'
+        telefono: '+54 9 3813 50-6527',
+        email: 'adminwiicegresados@gmail.com'
       },
     ]
   },

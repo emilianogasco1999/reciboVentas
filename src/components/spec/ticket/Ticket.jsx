@@ -10,6 +10,7 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
   const { ciudad, direccion, email, provincia, telefono } = empresas[0].sucursales[sucursal - 1]
 
 
+
   useEffect(() => {
     document.title = `RV-001-000000${ticket}`;
   }, []);
@@ -67,7 +68,7 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
               }
               <p><span className='fw-bold'>Condicion de IVA: </span>Consumidor Final</p>
               <p><span className='fw-bold'>Observacion: </span>{observacion}</p>
-              <p><span className='fw-bold'>Detalle: </span> Cuota {cuota} de {NumerosALetras(monto, { plural: "pesos" }).replace(/ 00\/100 M\.N\.$/, "")}</p>
+              <p><span className='fw-bold'>Detalle: </span> Cuota N° {cuota} de {NumerosALetras(monto, { plural: "pesos" }).replace(/ 00\/100 M\.N\.$/, "")}</p>
               <br />
 
               <p><span className='fw-bold'>Medio de Pago: </span>{pago}</p>

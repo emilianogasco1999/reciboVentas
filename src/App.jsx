@@ -2,17 +2,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./page/Home";
 import Error404 from "./page/Error404";
 import Printer from "./page/Printer";
-import Contador from "./components/spec/contador/Contador";
+import FinishSystem from "./page/FinishSystem";
 
 function App() {
-  const fecha = new Date('2025-02-20T00:00:00')
+  const fecha = new Date('2025-02-25T00:00:00')
   // console.log(new Date('2025-02-20'))
   return (
     <Router>
 
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/homee" element={<Contador fecha={fecha} />} /> */}
+        <Route path="/finishsystem" element={<FinishSystem/>} />
         <Route path="/home" element={<Home />} />
         <Route path="/printer" element={<Printer />} />
         <Route path="*" element={<Error404 />} />

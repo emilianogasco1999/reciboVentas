@@ -9,6 +9,8 @@ import Input from "../components/gen/input/Input.jsx";
 import Select from "../components/gen/select/Select.jsx";
 
 const Home = () => {
+  const fecha = new Date('2025-03-31T00:00:00')
+
   const [darkMode, setDarkMode] = useState(() => {
     const savedPreference = localStorage.getItem("darkMode");
     return savedPreference ? JSON.parse(savedPreference) : false;
@@ -98,6 +100,7 @@ const Home = () => {
       </form>
 
       <Footer
+        fecha={ fecha}
         darkMode={darkMode}
       />
     </Container>
