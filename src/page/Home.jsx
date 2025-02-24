@@ -20,7 +20,7 @@ const Home = ({ empresaId }) => {
   });
 
   useEffect(() => {
-    document.title = 'Wiic Recibos - Home';
+    document.title = `${empresa.name} Recibo - Home`;
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
     if (darkMode) {
       document.body.classList.add('bg-dark', 'text-white');
