@@ -117,6 +117,31 @@ export const empresas = [
       },
     ]
   },
+  {
+    id: 2,
+    titulo: 'CHRISDEI',
+    name: 'Chrisdei',
+    sucursales: [
+      {
+        value: 1,
+        titulo:'Galeria San Martin 667 - Tucuman',
+        direccion: 'Galeria San Martin 667, Sector Central - Oficina N°14',
+        ciudad: 'San Miguel de Tucumán',
+        provincia: 'Tucumán - 4000',
+        telefono: '3813 50-6527 (Gerencia) / 3813 48-0927 (Administracion)',
+        email: 'adminwiicegresados@gmail.com'
+      },
+      {
+        value: 2,
+        titulo:'Zurita 351 - Catamarca',
+        direccion: 'Zurita 351 - Oficina N°3',
+        ciudad: 'San Fernando del Valle de Catamarca',
+        provincia: 'Catamarca - 4700',
+        telefono: '3813 50-6527 (Gerencia) / 3813 48-0927 (Administracion)',
+        email: 'adminwiicegresados@gmail.com'
+      },
+    ]
+  },
 ]
 export const selectEmpresa = [
   {

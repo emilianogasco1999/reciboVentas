@@ -4,10 +4,10 @@ import chrisdei from '../../../assets/img/logos/chrisdei.png'
 import { NumerosALetras } from 'numero-a-letras';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { empresas } from '../../../data/dataForm';
-const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion, cuota, referente, colegio, tipoDePago }) => {
-  
-  const { ciudad, direccion, email, provincia, telefono } = empresas[0].sucursales[sucursal - 1]
+const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion, cuota, referente, colegio, tipoDePago, dataEmpresa }) => {
+
+
+  const { ciudad, direccion, email, provincia, telefono } = dataEmpresa.sucursales[sucursal - 1]
 
   useEffect(() => {
     document.title = `RV-001-000000${ticket}`;
@@ -34,11 +34,14 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
           <div className="row p-0 ">
 
             <div className="col-12 p-0 d-flex justify-content-center mb-2">
-              <img src={wiic} alt="" style={{ width: '130px' }} />
+              <img src={
+                dataEmpresa.id == 1 ? wiic : chrisdei
+
+              } alt="" style={{ width: '130px' }} />
             </div>
             {/* <h1 className='text-center'>X</h1> */}
 
-            <h6 className='text-center'>{empresas[0].titulo}</h6>
+            <h6 className='text-center'>{dataEmpresa.titulo}</h6>
 
             <div className={`${Style.datosEmpresa} mb-3`}>
               <p> <span className='fw-bold'>Razon Social: </span>Jif Indumentaria Sas </p>

@@ -8,7 +8,10 @@ import Container from "../components/gen/container/Container"
 import Input from "../components/gen/input/Input.jsx";
 import Select from "../components/gen/select/Select.jsx";
 
-const Home = () => {
+const Home = ({ empresaId }) => {
+
+  const empresa = empresas.find(empresa => empresa.id == empresaId)
+
   const fecha = new Date('2025-03-31T00:00:00')
 
   const [darkMode, setDarkMode] = useState(() => {
@@ -33,9 +36,14 @@ const Home = () => {
 
   const handlePrint = (data) => {
     const fecha = new Date().toLocaleDateString("es-ES");
-    const updatedData = { ...data, fecha };
+    const updatedData = { ...data, fecha};
     document.body.classList.remove('bg-dark', 'text-white');
-    navigate("/printer", { state: updatedData });
+    navigate("/printer", {
+      state: {
+        updatedData: updatedData,
+        dataEmpresa: empresa,
+      },
+    });
   };
 
   const onSubmit = (data) => handlePrint(data);
@@ -47,7 +55,7 @@ const Home = () => {
   return (
     <Container className={`mt-3 ${darkMode ? 'bg-dark text-white' : ''}`} >
       <div className="d-flex justify-content-between mb-3">
-        <span className="fw-bold">WIIC EGRESADOS</span>
+        <span className="fw-bold">{empresa.titulo}</span>
         <button className="btn btn-secondary" onClick={toggleDarkMode}>
           {darkMode ? <i className="bi bi-brightness-high-fill"></i> : <i className="bi bi-moon-fill"></i>}
         </button>
@@ -59,7 +67,7 @@ const Home = () => {
             titulo={'Sucursal'}
             errorText={'elige una sucursal'}
             required={true}
-            options={empresas[0].sucursales}
+            options={empresa.sucursales}
             name={'sucursal'}
             register={register}
             darkMode={darkMode}

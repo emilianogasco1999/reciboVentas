@@ -5,15 +5,27 @@ import Printer from "./page/Printer";
 import FinishSystem from "./page/FinishSystem";
 
 function App() {
-  const fecha = new Date('2025-02-25T00:00:00')
-  // console.log(new Date('2025-02-20'))
+  const empresaId = Number(import.meta.env.VITE_EMPRESA_NUMBER)
   return (
     <Router>
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/finishsystem" element={<FinishSystem/>} />
-        <Route path="/home" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              empresaId={empresaId}
+            />
+          }
+        />
+        <Route path="/finishsystem" element={<FinishSystem />} />
+        <Route
+          path="/home"
+          element={
+            <Home
+              empresaId={empresaId}
+            />}
+        />
         <Route path="/printer" element={<Printer />} />
         <Route path="*" element={<Error404 />} />
       </Routes>

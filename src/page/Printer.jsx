@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { selectTipoDePago, selectMetodoDePago } from '../data/dataForm.js';
+import { selectMetodoDePago } from '../data/dataForm.js';
 import Ticket from "../components/spec/ticket/Ticket.jsx";
 
 
@@ -8,7 +8,10 @@ import Ticket from "../components/spec/ticket/Ticket.jsx";
 const Printer = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const data = location.state;
+
+  const data = location.state.updatedData;
+  const dataEmpresa = location.state.dataEmpresa;
+
   useEffect(() => {
     if (!data) {
       navigate("/home");
@@ -34,6 +37,7 @@ const Printer = () => {
       referente={referente}
       colegio={colegio}
       tipoDePago={tipoDePago}
+      dataEmpresa={dataEmpresa}
     />
   )
 }
