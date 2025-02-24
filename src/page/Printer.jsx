@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { selectPagos } from '../data/dataForm.js';
+import { selectTipoDePago, selectMetodoDePago } from '../data/dataForm.js';
 import Ticket from "../components/spec/ticket/Ticket.jsx";
 
 
@@ -16,9 +16,9 @@ const Printer = () => {
   }, [data, navigate]);
 
   if (!data) return null;
-  const { monto, nDni, nPedido, nTicket, pago, fecha, sucursal, observacion, cuota, referente, colegio } = data;
+  const { monto, nDni, nPedido, nTicket, pago, fecha, sucursal, observacion, cuota, referente, colegio, tipoDePago } = data;
 
-  const pagoSeleccionado = selectPagos.find(pag => pag.value == pago)
+  const metodoDePagoSeleccionado = selectMetodoDePago.find(pag => pag.value == pago)
 
   return (
     <Ticket
@@ -26,13 +26,14 @@ const Printer = () => {
       dni={nDni}
       pedido={nPedido}
       ticket={nTicket}
-      pago={pagoSeleccionado.titulo}
+      pago={metodoDePagoSeleccionado.titulo}
       fecha={fecha}
       observacion={observacion}
       sucursal={sucursal}
       cuota={cuota}
       referente={referente}
       colegio={colegio}
+      tipoDePago={tipoDePago}
     />
   )
 }

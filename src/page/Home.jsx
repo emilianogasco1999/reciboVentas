@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form"
-import { fromReciboVentas, selectPagos, empresas } from '../data/dataForm.js';
+import { fromReciboVentas, selectMetodoDePago, empresas, selectTipoDePago } from '../data/dataForm.js';
 import useBootstrapValidation from '../hooks/useBootstrapValidation.js'
 import Footer from "../components/spec/footer/Footer"
 import Container from "../components/gen/container/Container"
@@ -81,18 +81,29 @@ const Home = () => {
             />
           </div>
         ))}
-
+        <div className="col-6 col-md-4">
+          <Select
+            titulo={'Forma de Pago'}
+            errorText={'Elige una forma de pago'}
+            required={true}
+            options={selectTipoDePago}
+            register={register}
+            name={'tipoDePago'}
+            darkMode={darkMode}
+          />
+        </div>
         <div className="col-6 col-md-4">
           <Select
             titulo={'Metodo de pago'}
             errorText={'elige metodo'}
             required={true}
-            options={selectPagos}
+            options={selectMetodoDePago}
             register={register}
             name={'pago'}
             darkMode={darkMode}
           />
         </div>
+
 
         <div className="col-12 d-flex justify-content-end">
           <button className="btn btn-secondary" type="submit" >Comprobante  <i className="bi bi-ticket-perforated"></i> </button>
@@ -100,7 +111,7 @@ const Home = () => {
       </form>
 
       <Footer
-        fecha={ fecha}
+        fecha={fecha}
         darkMode={darkMode}
       />
     </Container>

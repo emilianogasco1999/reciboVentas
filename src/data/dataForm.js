@@ -25,15 +25,15 @@ export const fromReciboVentas = [
   },
   {
     titulo: 'DNI',
-    required: false,
-    type: 'text',
+    required: true,
+    type: 'number',
     errorText: 'introduce el dni',
     placeholder: 'Escribe el DNI',
     name: 'nDni'
   },
   {
     titulo: 'Nombre de Referente',
-    required: false,
+    required: true,
     type: 'text',
     errorText: 'introduce el nombre del referente',
     placeholder: 'Escribe el nombre del referente',
@@ -66,7 +66,7 @@ export const fromReciboVentas = [
 ]
 
 
-export const selectPagos = [
+export const selectMetodoDePago = [
   {
     titulo: 'Efectivo',
     value: 1,
@@ -78,6 +78,16 @@ export const selectPagos = [
   {
     titulo: 'Tarjeta',
     value: 3,
+  },
+]
+export const selectTipoDePago = [
+  {
+    titulo: 'Grupal',
+    value: 1,
+  },
+  {
+    titulo: 'Individual',
+    value: 2,
   },
 ]
 

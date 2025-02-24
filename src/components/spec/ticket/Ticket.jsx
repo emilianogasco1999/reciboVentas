@@ -5,11 +5,9 @@ import { NumerosALetras } from 'numero-a-letras';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { empresas } from '../../../data/dataForm';
-const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion, cuota, referente, colegio }) => {
-
+const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion, cuota, referente, colegio, tipoDePago }) => {
+  
   const { ciudad, direccion, email, provincia, telefono } = empresas[0].sucursales[sucursal - 1]
-
-
 
   useEffect(() => {
     document.title = `RV-001-000000${ticket}`;
@@ -60,12 +58,14 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
               <p> <span className='fw-bold'>Sucursal: </span>00{sucursal}</p>
               <p> <span className='fw-bold'>Cliente: </span>{pedido}</p>
               <p> <span className='fw-bold'>Colegio: </span>{colegio}</p>
+              <p> <span className='fw-bold'>Referente: </span>{newDni} {referente} -
+                {tipoDePago == 1 ?
+                  ' Pago Grupal'
+                  :
+                  ' Pago Individual'
+                }
+              </p>
 
-              {dni > 0 ?
-                <p> <span className='fw-bold'>Documento: </span>{newDni} - Pago Individual </p>
-                :
-                <p> <span className='fw-bold'>Referente:</span> {referente} - PAGO GRUPAL</p>
-              }
 
               <p><span className='fw-bold'>Condicion de IVA: </span>Consumidor Final</p>
               <p><span className='fw-bold'>Observacion: </span>{observacion}</p>
