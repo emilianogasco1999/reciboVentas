@@ -16,12 +16,28 @@ export const fromReciboVentas = [
     name: 'nTicket'
   },
   {
+    titulo: 'Colegio',
+    required: true,
+    type: 'text',
+    errorText: 'Escribe el nombre del colegio',
+    placeholder: 'Nombre de colegio',
+    name: 'colegio'
+  },
+  {
     titulo: 'DNI',
     required: false,
-    type: 'number',
+    type: 'text',
     errorText: 'introduce el dni',
     placeholder: 'Escribe el DNI',
     name: 'nDni'
+  },
+  {
+    titulo: 'Nombre de Referente',
+    required: false,
+    type: 'text',
+    errorText: 'introduce el nombre del referente',
+    placeholder: 'Escribe el nombre del referente',
+    name: 'referente'
   },
   {
     titulo: 'Monto',
@@ -73,11 +89,20 @@ export const empresas = [
     sucursales: [
       {
         value: 1,
-        titulo:'Galeria San Martin 667',
+        titulo:'Galeria San Martin 667 - Tucuman',
         direccion: 'Galeria San Martin 667, Sector Central - Oficina N°14',
         ciudad: 'San Miguel de Tucumán',
         provincia: 'Tucumán - 4000',
-        telefono: '+54 9 3813 50-6527',
+        telefono: '3813 50-6527 (Gerencia) / 3813 48-0927 (Administracion)',
+        email: 'adminwiicegresados@gmail.com'
+      },
+      {
+        value: 2,
+        titulo:'Zurita 351 - Catamarca',
+        direccion: 'Zurita 351 - Oficina N°3',
+        ciudad: 'San Fernando del Valle de Catamarca',
+        provincia: 'Catamarca - 4700',
+        telefono: '3813 50-6527 (Gerencia) / 3813 48-0927 (Administracion)',
         email: 'adminwiicegresados@gmail.com'
       },
     ]

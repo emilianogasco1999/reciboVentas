@@ -16,7 +16,7 @@ const Printer = () => {
   }, [data, navigate]);
 
   if (!data) return null;
-  const { monto, nDni, nPedido, nTicket, pago, fecha, sucursal, observacion, cuota } = data;
+  const { monto, nDni, nPedido, nTicket, pago, fecha, sucursal, observacion, cuota, referente, colegio } = data;
 
   const pagoSeleccionado = selectPagos.find(pag => pag.value == pago)
 
@@ -31,6 +31,8 @@ const Printer = () => {
       observacion={observacion}
       sucursal={sucursal}
       cuota={cuota}
+      referente={referente}
+      colegio={colegio}
     />
   )
 }

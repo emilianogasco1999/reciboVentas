@@ -2,10 +2,10 @@ import Style from './Ticket.module.css'
 import wiic from '../../../assets/img/logos/wiic.svg'
 import chrisdei from '../../../assets/img/logos/chrisdei.png'
 import { NumerosALetras } from 'numero-a-letras';
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { empresas } from '../../../data/dataForm';
-const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion, cuota }) => {
+const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion, cuota, referente, colegio }) => {
 
   const { ciudad, direccion, email, provincia, telefono } = empresas[0].sucursales[sucursal - 1]
 
@@ -19,7 +19,7 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
     style: 'currency',
     currency: 'ARS',
   }).format(monto)
- 
+
   // const newDni = new Intl.NumberFormat('es-AR').format(dni)
   const newDni = dni.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -38,9 +38,8 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
             <div className="col-12 p-0 d-flex justify-content-center mb-2">
               <img src={wiic} alt="" style={{ width: '130px' }} />
             </div>
+            {/* <h1 className='text-center'>X</h1> */}
 
-
-            <h1 className='text-center'>X</h1>
             <h6 className='text-center'>{empresas[0].titulo}</h6>
 
             <div className={`${Style.datosEmpresa} mb-3`}>
@@ -48,24 +47,26 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
               <p> <span className='fw-bold'>C.U.I.T.: </span>30-71.825.031-1 </p>
               <p> <span className='fw-bold'>IVA Responsable Inscripto</span></p>
               <p> <span className='fw-bold'>Inici. de act. 23/08/2023 </span></p>
-
             </div>
+
             <h6 className='text-center fw-bold'>* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * </h6>
             <div className={`${Style.datosEmpresa} mb-3`}>
-              <h5 className='text-center'>RV-001-000000{ticket}</h5>
+              <h5 className='text-center'>RV-00{sucursal}-000000{ticket}</h5>
               <p> <span className='fw-bold'>Fecha: </span>{fecha}</p>
               <p> <span className='fw-bold'>Direccion: </span>{direccion} - {ciudad} - {provincia}</p>
               <p> <span className='fw-bold'>Cel: </span>{telefono}</p>
               <p> <span className='fw-bold'>Mail: </span>{email}</p>
               <br />
               <p> <span className='fw-bold'>Sucursal: </span>00{sucursal}</p>
-
               <p> <span className='fw-bold'>Cliente: </span>{pedido}</p>
+              <p> <span className='fw-bold'>Colegio: </span>{colegio}</p>
+
               {dni > 0 ?
                 <p> <span className='fw-bold'>Documento: </span>{newDni} - Pago Individual </p>
                 :
-                <p> <span className='fw-bold'>Documento:</span> PAGO GRUPAL</p>
+                <p> <span className='fw-bold'>Referente:</span> {referente} - PAGO GRUPAL</p>
               }
+
               <p><span className='fw-bold'>Condicion de IVA: </span>Consumidor Final</p>
               <p><span className='fw-bold'>Observacion: </span>{observacion}</p>
               <p><span className='fw-bold'>Detalle: </span> Cuota N° {cuota} de {NumerosALetras(monto, { plural: "pesos" }).replace(/ 00\/100 M\.N\.$/, "")}</p>
@@ -73,11 +74,12 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
 
               <p><span className='fw-bold'>Medio de Pago: </span>{pago}</p>
               <p> <span className='fw-bold'>TOTAL: </span>{newMonto}</p>
+
             </div>
             <h6 className='text-center fw-bold'>* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * </h6>
 
-            <p className='text-center'>
-              <span className='fw-bold '>DOCUMENTO NO VALIDO COMO FACTURA</span>
+            <p className='text-center' style={{ fontSize: '8px' }}>
+              DOCUMENTO NO VALIDO COMO FACTURA
             </p>
 
           </div>
