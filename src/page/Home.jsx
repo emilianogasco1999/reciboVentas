@@ -8,11 +8,11 @@ import Container from "../components/gen/container/Container"
 import Input from "../components/gen/input/Input.jsx";
 import Select from "../components/gen/select/Select.jsx";
 
-const Home = ({ empresaId }) => {
+const Home = ({ empresaId, fecha }) => {
 
   const empresa = empresas.find(empresa => empresa.id == empresaId)
 
-  const fecha = new Date('2025-03-31T00:00:00')
+
 
   const [darkMode, setDarkMode] = useState(() => {
     const savedPreference = localStorage.getItem("darkMode");
@@ -36,7 +36,7 @@ const Home = ({ empresaId }) => {
 
   const handlePrint = (data) => {
     const fecha = new Date().toLocaleDateString("es-ES");
-    const updatedData = { ...data, fecha};
+    const updatedData = { ...data, fecha };
     document.body.classList.remove('bg-dark', 'text-white');
     navigate("/printer", {
       state: {

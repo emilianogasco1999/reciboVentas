@@ -9,6 +9,7 @@ import cambiarImageTitle from "./hooks/imageTitle";
 
 function App() {
   const empresaId = Number(import.meta.env.VITE_EMPRESA_NUMBER)
+  const fecha = new Date('2025-02-01T00:00:00')
   
   if (empresaId == 1) {
     cambiarImageTitle(wiic)
@@ -25,6 +26,7 @@ function App() {
           element={
             <Home
               empresaId={empresaId}
+              fecha={fecha}
             />
           }
         />
@@ -34,6 +36,7 @@ function App() {
           element={
             <Home
               empresaId={empresaId}
+              fecha={fecha}
             />}
         />
         <Route path="/printer" element={<Printer />} />
