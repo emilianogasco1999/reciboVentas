@@ -19,7 +19,7 @@ const Printer = () => {
   }, [data, navigate]);
 
   if (!data) return null;
-  const { monto, nDni, nPedido, nTicket, pago, fecha, sucursal, observacion, cuota, referente, colegio, tipoDePago } = data;
+  const { monto, nDni, nPedido, nTicket, pago, fecha, sucursal, observacion, cuota, referente, colegio, tipoDePago, cobrador } = data;
 
   const metodoDePagoSeleccionado = selectMetodoDePago.find(pag => pag.value == pago)
 
@@ -38,6 +38,7 @@ const Printer = () => {
       colegio={colegio}
       tipoDePago={tipoDePago}
       dataEmpresa={dataEmpresa}
+      cobrador={cobrador}
     />
   )
 }

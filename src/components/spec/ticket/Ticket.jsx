@@ -4,9 +4,11 @@ import chrisdei from '../../../assets/img/logos/chrisdei.png'
 import { NumerosALetras } from 'numero-a-letras';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion, cuota, referente, colegio, tipoDePago, dataEmpresa }) => {
+const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion, cuota, referente, colegio, tipoDePago, dataEmpresa, cobrador }) => {
 
 
+  console.log(dataEmpresa)
+  const { razonSocial, CUIT, IVA, InDeAct } = dataEmpresa
   const { ciudad, direccion, email, provincia, telefono } = dataEmpresa.sucursales[sucursal - 1]
 
   useEffect(() => {
@@ -44,10 +46,10 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
             <h6 className='text-center'>{dataEmpresa.titulo}</h6>
 
             <div className={`${Style.datosEmpresa} mb-3`}>
-              <p> <span className='fw-bold'>Razon Social: </span>Jif Indumentaria Sas </p>
-              <p> <span className='fw-bold'>C.U.I.T.: </span>30-71.825.031-1 </p>
-              <p> <span className='fw-bold'>IVA Responsable Inscripto</span></p>
-              <p> <span className='fw-bold'>Inici. de act. 23/08/2023 </span></p>
+              {razonSocial ? <p> <span className='fw-bold'>Razon Social: </span>{razonSocial} </p> : ''}
+              {CUIT ? <p> <span className='fw-bold'>C.U.I.T.: </span>{CUIT} </p> : ''}
+              {IVA ? <p> <span className='fw-bold'>IVA {IVA}</span></p> : ''}
+              {InDeAct ? <p> <span className='fw-bold'>Inici. de act. {InDeAct} </span></p> : ''}
             </div>
 
             <h6 className='text-center fw-bold'>* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * </h6>
@@ -75,6 +77,7 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
               <p><span className='fw-bold'>Detalle: </span> Cuota N° {cuota} de {NumerosALetras(monto, { plural: "pesos" }).replace(/ 00\/100 M\.N\.$/, "")}</p>
               <br />
 
+              {cobrador ? <p><span className='fw-bold'>Cobrador: </span>{cobrador}</p> : ''}
               <p><span className='fw-bold'>Medio de Pago: </span>{pago}</p>
               <p> <span className='fw-bold'>TOTAL: </span>{newMonto}</p>
 

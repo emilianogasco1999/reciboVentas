@@ -63,6 +63,14 @@ export const fromReciboVentas = [
     placeholder: 'Escribe la cuota',
     name: 'cuota'
   },
+  {
+    titulo: 'Cobranza',
+    required: false,
+    type: 'text',
+    errorText: 'introduce el cobrador',
+    placeholder: 'Escribe el nombre del cobrador',
+    name: 'cobrador'
+  },
 ]
 
 
@@ -96,10 +104,14 @@ export const empresas = [
     id: 1,
     titulo: 'WIIC EGRESADOS',
     name: 'Wiic',
+    razonSocial: 'Jif Indumentaria Sas',
+    CUIT: '30-71.825.031-1',
+    IVA: 'Responsable Inscripto',
+    InDeAct: '23/08/2023',
     sucursales: [
       {
         value: 1,
-        titulo:'Galeria San Martin 667 - Tucuman',
+        titulo: 'Galeria San Martin 667 - Tucuman',
         direccion: 'Galeria San Martin 667, Sector Central - Oficina N°14',
         ciudad: 'San Miguel de Tucumán',
         provincia: 'Tucumán - 4000',
@@ -108,7 +120,7 @@ export const empresas = [
       },
       {
         value: 2,
-        titulo:'Zurita 351 - Catamarca',
+        titulo: 'Zurita 351 - Catamarca',
         direccion: 'Zurita 351 - Oficina N°3',
         ciudad: 'San Fernando del Valle de Catamarca',
         provincia: 'Catamarca - 4700',
@@ -119,26 +131,21 @@ export const empresas = [
   },
   {
     id: 2,
-    titulo: 'CHRISDEI',
+    titulo: 'CHRISDEI EGRESADOS',
     name: 'Chrisdei',
+    razonSocial: 'Monotributo',
+    CUIT: '27-26961676-3',
+    // IVA:'Responsable Inscripto',
+    // InDeAct:'23/08/2023',
     sucursales: [
       {
         value: 1,
-        titulo:'Galeria San Martin 667 - Tucuman',
-        direccion: 'Galeria San Martin 667, Sector Central - Oficina N°14',
+        titulo: 'Calle salta 126, 12 B - Tucuman',
+        direccion: 'Calle salta 126, 12 B',
         ciudad: 'San Miguel de Tucumán',
         provincia: 'Tucumán - 4000',
-        telefono: '3813 50-6527 (Gerencia) / 3813 48-0927 (Administracion)',
-        email: 'adminwiicegresados@gmail.com'
-      },
-      {
-        value: 2,
-        titulo:'Zurita 351 - Catamarca',
-        direccion: 'Zurita 351 - Oficina N°3',
-        ciudad: 'San Fernando del Valle de Catamarca',
-        provincia: 'Catamarca - 4700',
-        telefono: '3813 50-6527 (Gerencia) / 3813 48-0927 (Administracion)',
-        email: 'adminwiicegresados@gmail.com'
+        telefono: '3812 06-1012 (Comercial) / 3812 21-3971 (Administracion)',
+        email: 'chrisdeiegresados1977@gmail.com'
       },
     ]
   },
