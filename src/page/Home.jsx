@@ -119,7 +119,7 @@ const Home = ({ empresaId, fecha }) => {
       </form>
 
       <Footer
-        fecha={fecha}
+        // fecha={fecha}
         darkMode={darkMode}
       />
     </Container>
