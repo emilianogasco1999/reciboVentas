@@ -6,13 +6,11 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion, cuota, referente, colegio, tipoDePago, dataEmpresa, cobrador }) => {
 
-
-  console.log(dataEmpresa)
   const { razonSocial, CUIT, IVA, InDeAct } = dataEmpresa
-  const { ciudad, direccion, email, provincia, telefono } = dataEmpresa.sucursales[sucursal - 1]
+  const { ciudad, direccion, email, provincia, telefono,value } = dataEmpresa.sucursales[sucursal - 1]
 
   useEffect(() => {
-    document.title = `RV-001-000000${ticket}`;
+    document.title = `RV-00${sucursal}-000000${ticket}`;
   }, []);
 
   const newMonto = new Intl.NumberFormat('es-AR', {
@@ -54,7 +52,7 @@ const Ticket = ({ monto, dni, pedido, ticket, pago, fecha, sucursal, observacion
 
             <h6 className='text-center fw-bold'>* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * </h6>
             <div className={`${Style.datosEmpresa} mb-3`}>
-              <h5 className='text-center'>RV-00{sucursal}-000000{ticket}</h5>
+              <h5 className='text-center'>RV-00{sucursal}-{ticket}</h5>
               <p> <span className='fw-bold'>Fecha: </span>{fecha}</p>
               <p> <span className='fw-bold'>Direccion: </span>{direccion} - {ciudad} - {provincia}</p>
               <p> <span className='fw-bold'>Cel: </span>{telefono}</p>
