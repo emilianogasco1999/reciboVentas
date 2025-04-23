@@ -2,7 +2,7 @@ export const fromReciboVentas = [
   {
     titulo: 'Numero de Pedido',
     required: true,
-    type: 'number',
+    type: 'text',
     errorText: 'Escribe un numero de pedido',
     placeholder: 'N° Pedido',
     name: 'nPedido'
