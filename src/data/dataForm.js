@@ -87,6 +87,10 @@ export const selectMetodoDePago = [
     titulo: 'Tarjeta',
     value: 3,
   },
+  {
+    titulo: 'Efectivo y Tranferencia',
+    value: 4,
+  },
 ]
 export const selectTipoDePago = [
   {
