@@ -1,7 +1,7 @@
-# Recibo Ventas
+# Generador de Recibos de Venta
 
 ## Descripción
-Recibo Ventas es una aplicacion simple para realizar un recibo de una venta
+Aplicación web que permite generar recibos de venta de forma rápida y sencilla. Permite generar recibos de venta (no válidos como factura) utilizando los datos de la compañía ya integrados, ofreciendo una forma rápida y práctica de emitir comprobantes para entregar a sus clientes.
 
 ## Tecnologías Utilizadas
 - HTML
