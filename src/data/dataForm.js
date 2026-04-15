@@ -144,8 +144,8 @@ export const empresas = [
     sucursales: [
       {
         value: 1,
-        titulo: 'Calle salta 126, 12 B - Tucuman',
-        direccion: 'Calle salta 126, 12 B',
+        titulo: 'Lamadrid 412 oficina 2A - Tucuman',
+        direccion: 'Lamadrid 412 oficina 2A',
         ciudad: 'San Miguel de Tucumán',
         provincia: 'Tucumán - 4000',
         telefono: '3812 06-1012 (Comercial) / 3812 21-3971 (Administracion)',
